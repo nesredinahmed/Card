@@ -5,6 +5,11 @@ public class Hand {
     Hand(){
         cards = new ArrayList<Card>();
     }
+    public void show(){
+        for(Card c : cards){
+            c.flip();
+        }
+    }
     public int getSize(){
         return this.cards.size();
     }
@@ -19,5 +24,12 @@ public class Hand {
     }
     public void pickUp(Card card){
         this.cards.add(card);
+    }
+    public String toString(){
+        ArrayList<String> output = new ArrayList<>();
+        for(Card c : cards){
+            output.add(c.toString());
+        }
+        return String.join(" ", output) + "\n";
     }
 }
